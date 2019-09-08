@@ -1,0 +1,46 @@
+{
+  "name": "terminal-image-viewer",
+  "version": "1.0.0",
+  "description": "Views an image in the terminal as basic 16-color graphics",
+  "main": "dist/index.js",
+  "scripts": {
+    "print": "node ./dist/index.js",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "test": "mocha --require @babel/register --require test/helper.js -c test/*Spec.js --timeout 5000",
+    "testthis": "mocha --require @babel/register --require test/helper.js",
+    "clean": "rm -rf node_modules",
+    "reinstall": "npm run clean && npm install",
+    "rebuild": "npm run clean && npm install && npm run build"
+  },
+  "keywords": [
+    "retro",
+    "augmentedjs",
+    "graphics",
+    "terminal"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Augmentedjs/terminal-image-viewer.git"
+  },
+  "author": "Bob Warren <jedi.master@augmentedjs.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "mocha": "^6.2.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/Augmentedjs/terminal-image-viewer/issues"
+  },
+  "homepage": "https://github.com/Augmentedjs/terminal-image-viewer"
+}

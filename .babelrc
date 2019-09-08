@@ -1,0 +1,10 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "browsers": ["node >= 10"]
+      },
+      "debug": true
+    }]
+  ]
+}
