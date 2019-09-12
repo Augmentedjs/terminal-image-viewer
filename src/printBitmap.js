@@ -3,9 +3,13 @@ const SQUARE = " ";
 const HALF = "▀";
 
 const print = (row) => {
+  if (!row) {
+    return;
+  }
   let x = 0, text = "";
   for (x = 0; x < row.length; x++) {
-    text += `${PALETTE[row[x]]}${SQUARE}${RESET}`;
+    const i = parseInt(row[x], 16);
+    text += `${PALETTE[i]}${SQUARE}${RESET}`;
   }
   console.log(text);
   return text;
