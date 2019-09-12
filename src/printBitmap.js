@@ -12,8 +12,16 @@ const print = (row) => {
 };
 
 const printDouble = (y1, y2) => {
+  if (!y1) {
+    return;
+  }
   const row1 = y1.slice();
-  const row2 = y2.slice();
+  let row2;
+  if (!y2) {
+    row2 = new Array(row1.length).fill("0");
+  } else {
+    row2 = y2.slice();
+  }
   let x = 0, text = "";
   for (x = 0; x < row1.length; x++) {
     if (row1 && row2) {
