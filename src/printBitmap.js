@@ -1,27 +1,27 @@
-const { PALETTE, PALETTE_FG, RESET, DIM } = require("./colors.js");
+const { PALETTE, PALETTE_FG, RESET } = require("./colors.js");
 const SQUARE = " ";
 const HALF = "▀";
 
 const print = (row) => {
   let x = 0, text = "";
   for (x = 0; x < row.length; x++) {
-    text += `${PALETTE[row[x]]}${SQUARE}`;
+    text += `${PALETTE[row[x]]}${SQUARE}${RESET}`;
   }
-  text += RESET;
   console.log(text);
   return text;
 };
 
-const printDouble = (row1, row2) => {
+const printDouble = (y1, y2) => {
+  const row1 = y1.slice();
+  const row2 = y2.slice();
   let x = 0, text = "";
   for (x = 0; x < row1.length; x++) {
     if (row1 && row2) {
-      text += `${PALETTE[row2[x]]}${PALETTE_FG[row1[x]]}${HALF}`;
-    } else {
-      // nothing
+      const i1 = parseInt(row1[x], 16);
+      const i2 = parseInt(row2[x], 16);
+      text += `${PALETTE[i2]}${PALETTE_FG[i1]}${HALF}${RESET}`;
     }
   }
-  text += RESET;
   console.log(text);
   return text;
 };
