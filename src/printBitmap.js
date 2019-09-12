@@ -7,7 +7,7 @@ const print = (row) => {
   for (x = 0; x < row.length; x++) {
     text += `${PALETTE[row[x]]}${SQUARE}`;
   }
-  text += Reset;
+  text += RESET;
   console.log(text);
   return text;
 };
