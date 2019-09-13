@@ -1,4 +1,5 @@
-const {printBitmapSingle, printBitmapDouble} = require("./printBitmap.js");
+const printBitmapSingle = require("./printSingle.js");
+const printBitmapDouble = require("./PrintDouble.js");
 
 if (process.argv && process.argv.length >= 3) {
   const fs = require("fs");

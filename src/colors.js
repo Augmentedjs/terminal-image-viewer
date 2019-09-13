@@ -80,9 +80,14 @@ const PALETTE_FG = [
   `${FgGray}`
 ];
 
+const SQUARE = " ";
+const HALF = "▀";
+
 module.exports = {
   "PALETTE": PALETTE,
   "PALETTE_FG": PALETTE_FG,
   "RESET": Reset,
   "DIM": Dim,
+  "SQUARE": SQUARE,
+  "HALF": HALF
 };
