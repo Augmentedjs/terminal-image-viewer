@@ -83,11 +83,16 @@ const PALETTE_FG = [
 const SQUARE = " ";
 const HALF = "▀";
 
+const ESCAPE_256_STRING_BG = "\u001b[48;5;";
+const ESCAPE_256_STRING_FG = "\u001b[38;5;";
+
 module.exports = {
   "PALETTE": PALETTE,
   "PALETTE_FG": PALETTE_FG,
   "RESET": Reset,
   "DIM": Dim,
   "SQUARE": SQUARE,
-  "HALF": HALF
+  "HALF": HALF,
+  "ESCAPE_256_STRING_BG": ESCAPE_256_STRING_BG,
+  "ESCAPE_256_STRING_FG": ESCAPE_256_STRING_FG
 };

@@ -1,4 +1,4 @@
-const { PALETTE, PALETTE_FG, RESET, SQUARE, HALF } = require("./colors.js");
+const { ESCAPE_256_STRING_BG, ESCAPE_256_STRING_FG, PALETTE, PALETTE_FG, RESET, SQUARE, HALF } = require("./colors.js");
 
 const printDouble = (y1, y2) => {
   if (!y1) {
@@ -39,7 +39,7 @@ const printDouble256 = (y1, y2) => {
     if (row1 && row2) {
       const i1 = parseInt(`${row1[x]}${row1[x + 1]}`, 16);
       const i2 = parseInt(`${row2[x]}${row2[x + 1]}`, 16);
-      text += `${PALETTE[i2]}${PALETTE_FG[i1]}${HALF}${RESET}`;
+      text += `${ESCAPE_256_STRING_BG + i2 + "m"}${ESCAPE_256_STRING_FG + i1 + "m"}${HALF}${RESET}`;
     }
   }
   console.log(text);
