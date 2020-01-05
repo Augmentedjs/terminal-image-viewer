@@ -1,5 +1,5 @@
 {
-  "name": "terminal-image-viewer",
+  "name": "@augmentedjs/terminal-image-viewer",
   "version": "1.2.2",
   "description": "Views an image in the terminal as basic 16-color graphics",
   "main": "dist/index.js",
