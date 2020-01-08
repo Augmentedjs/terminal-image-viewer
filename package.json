@@ -1,8 +1,11 @@
 {
   "name": "@augmentedjs/terminal-image-viewer",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Views an image in the terminal as basic 16-color graphics",
   "main": "dist/index.js",
+  "bin": {
+    "terminal-image-viewer": "./dist/index.js"
+  },
   "scripts": {
     "print": "node ./dist/index.js",
     "dev": "webpack --mode development",
