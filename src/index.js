@@ -1,5 +1,6 @@
 const printBitmapSingle = require("./printSingle.js");
 const printBitmapDouble = require("./printDouble.js");
+const printSemigraphics = require("./printSemigraphics.js");
 
 if (process.argv && process.argv.length >= 3) {
   const fs = require("fs");
@@ -8,17 +9,23 @@ if (process.argv && process.argv.length >= 3) {
   try {
     if (fs.existsSync(filename)) {
 
-      fs.readFile(filename, 'utf8', (err, data) => {
+      fs.readFile(filename, "utf8", (err, data) => {
         if (err) throw err;
         const json = JSON.parse(data);
         if (!json || typeof json !== "object") {
           console.error("Problem with json file.");
           return;
         }
-        if(json && json.shape && json.shape === "square") {
-          printBitmapDouble(json);
-        } else {
-          printBitmapSingle(json);
+
+        if (json) {
+          if (json.type && json.type === "Semigraphics") {
+            console.debug("details", json.width, json.height, json.bitmap.length);
+            printSemigraphics(json);
+          } else if (json.shape && json.shape === "square") {
+            printBitmapDouble(json);
+          } else {
+            printBitmapSingle(json);
+          }
         }
       });
     } else {
