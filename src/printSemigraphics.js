@@ -1,4 +1,4 @@
-const { ESCAPE_256_STRING_BG, ESCAPE_256_STRING_FG, PALETTE, PALETTE_FG, RESET, SQUARE, HALF } = require("./colors.js");
+const { ESCAPE_256_STRING_BG, ESCAPE_256_STRING_FG, RESET } = require("./colors.js");
 
 const rgbToAnsi256 = (r, g, b) => {
   // we use the extended greyscale palette here, with the exception of
@@ -22,7 +22,6 @@ const rgbToAnsi256 = (r, g, b) => {
 
   return ansi;
 };
-
 
 const printSemigraphics = (json) => {
   let char = 0, c = 0, line = "";

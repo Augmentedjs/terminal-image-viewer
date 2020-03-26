@@ -1,4 +1,4 @@
-const { ESCAPE_256_STRING_BG, ESCAPE_256_STRING_FG, PALETTE, PALETTE_FG, RESET, SQUARE, HALF } = require("./colors.js");
+const { ESCAPE_256_STRING_BG, ESCAPE_256_STRING_FG, PALETTE, PALETTE_FG, RESET, HALF } = require("./colors.js");
 const { formatBinary } = require("next-core-utilities");
 
 const printDoubleMono = (y1, y2) => {
