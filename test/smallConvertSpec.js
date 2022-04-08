@@ -9,7 +9,7 @@ describe("Given bitmaps in json", () => {
     expect(image).to.not.be.undefined;
   });
   it("can print to console", async () => {
-    const json = require("../data/peppers.json");
+    const json = require("../data/peppers256.json");
     const image = await printDouble(json);
     expect(image).to.not.be.undefined;
   });

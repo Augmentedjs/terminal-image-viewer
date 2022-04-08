@@ -1,10 +1,9 @@
 const path = require("path");
 const webpack = require("webpack");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: ['./src/index.js'],
+  entry: ["./src/index.js"],
   context: __dirname,
   target: "node",
   node: {
@@ -13,7 +12,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js",
-    chunkFilename: '[name].js'
+    chunkFilename: "[name].js",
+clean: true,
   },
   module: {
     rules: [
@@ -29,7 +29,6 @@ module.exports = {
   stats: "errors-only",
   devtool: "cheap-source-map",
   plugins: [
-    new CleanWebpackPlugin(),
     new webpack.DefinePlugin({
       VERSION: JSON.stringify(require("./package.json").version)
     })
